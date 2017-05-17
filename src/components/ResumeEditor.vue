@@ -45,7 +45,7 @@ export default{
 				profile:{
 					name:'李子豪',
 					city:'中国',
-					title:'简历'
+					title:'简'
 				},
 				'work history':[
 				{company:'AL',content:'我的第一个工作'},
