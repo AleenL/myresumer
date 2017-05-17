@@ -47,11 +47,26 @@ export default{
 					city:'中国',
 					title:'简历'
 				},
-				'work history':[],
-				education: [],
-				projects: [],
-				awards: [],
-				contacts: [],
+				'work history':[
+				{company:'AL',content:'我的第一个工作'},
+				{company:'TX',content:'我的第一个工作'}
+				],
+				education: [
+				{school:'AL',content:'我的大学'},
+				{school:'TX',content:'我的大学'}
+				],
+				projects: [
+				{name:'AL',content:'我的大学'},
+				{name:'TX',content:'我的大学'}
+				],
+				awards: [
+				{name:'AL',content:'我的大学'},
+				{name:'TX',content:'我的大学'}
+				],
+				contacts: [
+				{contact:'AL',content:'我的大学'},
+				{contact:'TX',content:'我的大学'}
+				],
 			}
 
 		}
