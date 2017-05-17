@@ -26,11 +26,10 @@ export default {
 	}
 	#topbar>.wrapper{
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
 	}
 	#topbar .logo{
-		margin-left: 20px;
 		font-size: 24px;
 		color: #000;
 	}

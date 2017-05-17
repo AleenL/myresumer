@@ -44,7 +44,10 @@ export default {
     margin-top: 16px;
     margin-bottom:16px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding:0 16px;
+    width: 100%;
+    align-self: center;
   }
   #resumeEditor{
     width: 35%;
