@@ -34,12 +34,12 @@ export default new Vuex.Store({
 				{name:'TX',content:'我的大学'}
 				],
 				awards: [
-				{name:'AL',content:'我的大学'},
+				{name:'先进个人',content:'渭南师范学院先进个人'},
 				{name:'TX',content:'我的大学'}
 				],
 				contacts: [
-				{contact:'AL',content:'我的大学'},
-				{contact:'TX',content:'我的大学'}
+				{contact:'phone',content:'18512444432'},
+				{contact:'QQ',content:'998778665'}
 				],
 			}
 		},
