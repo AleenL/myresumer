@@ -3,9 +3,10 @@
 		<div class="wrapper">
 			<span class="logo">Resumer</span>
 			<div class='actions'>
-				<a class='button primary' href="#" @click.prevent='signUpDiaVisible = true'>注册</a>
+				<span>{{user}}</span>
+				<a class='button primary' href="#" @click.prevent='signUpDialogVisible = true'>注册</a>
 				<MyDialog title='注册' :visible='signUpDialogVisible' @close='signUpDialogVisible = false'>
-					我就是 slot 内容
+					<SignUpForm @success='login($event)'/>
 				</MyDialog>
 				<a class='button' href="#">登录</a>
 				<button class='button primary'>保存</button>
@@ -17,6 +18,7 @@
 
 <script>
 import MyDialog from './MyDialog'
+import SignUpForm from './SignUpForm'
 export default {
 	name: "Topbar",
 	data(){
@@ -24,8 +26,19 @@ export default {
 			signUpDialogVisible: false
 		}
 	},
+	computed:{
+		user(){
+			return this.$store.state.user
+		}
+	},
 	components: {
-		MyDialog
+		MyDialog, SignUpForm
+	},
+	methods: {
+		login(user){
+			this.signUpDialogVisible = false
+			this.$store.commit('setUser',user)
+		}
 	}
 }
 </script>
