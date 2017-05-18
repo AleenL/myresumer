@@ -23,6 +23,8 @@
 					<input type="text" v-model="resume[item.field][key]">
 				</div>
 			</li>
+			<li>{{count}}</li>
+			<button @click='add'>test</button>
 		</ol>	
 	</div>
 </template>
@@ -68,7 +70,16 @@ export default{
 				{contact:'TX',content:'我的大学'}
 				],
 			}
-
+		}
+	},
+	computed: {
+		count (){
+			return this.$store.state.count
+		}
+	},
+	methods: {
+		add(){
+			this.$store.commit('increment')
 		}
 	}
 }
