@@ -95,7 +95,7 @@ export default {
 			li{line-height:1.5;}
 		}
 		section[data-name='contacts']{
-			td:first-child{padding-right: 1em;}
+			td:first-child{padding-right: .2em};
 		}
 	}
 </style>

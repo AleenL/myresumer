@@ -1,13 +1,11 @@
 <template>
-	<div>
+	<div class='SignInBox'>
 		<form @submit.prevent = 'signIn'>
 			<div class="row">
-				<label>用户名</label>
-				<input type="text" v-model='formData.username' required>
+				<input type="text" placeholder="请输入用户名" v-model='formData.username' required>
 			</div>
 			<div class="row">
-				<label>密码</label>
-				<input type="text" v-model='formData.password' required>
+				<input type="password" placeholder="请输入密码" v-model='formData.password' required>
 			</div>
 			<div class="actions">
 				<input type="submit" value='提交'>
@@ -37,7 +35,7 @@ export default {
 		signIn(){
 			let {username, password} = this.formData
 			AV.User.logIn(username,password).then(()=>{
-				this.$store.commit('setUser',getAVUser())
+				this.$emit('success',getAVUser())
 			},(error)=>{
 				this.errorMessage = getErrorMessage(error)
 			});
@@ -45,3 +43,12 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+	.SignInBox{
+	width: 100%;
+	.row div{background-color: #233}
+	.row input{width:100%;height:3em; margin-bottom:.3em;border-radius: 3px;border: 0;}
+	.actions input{width:100%;height:3em;border-radius: 3px;margin-top:.2em;font-size: 16px}
+}
+</style>

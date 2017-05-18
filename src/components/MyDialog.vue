@@ -1,5 +1,5 @@
 <template>
-	<div class='wrapper' v-show='visible'>
+	<div class='DialogWrapper' v-show='visible'>
 		<div class='dialog'>
 			<header>{{title}}
 				<span class='close' @click='close'>X</span>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-	.wrapper{
+	.DialogWrapper{
 		position: fixed;
 		background: hsla(0,0%,0%,.25);
 		top: 0;left: 0;bottom: 0;right: 0;margin: 0;
@@ -33,8 +33,8 @@ export default {
 		justify-content: center;
 	}
 	.dialog{
-		background: white;min-height: 4em;min-width: 10em;
-		> header{padding: 16px;display: flex;justify-content: space-between;}
+		background: #233;min-height: 12em;min-width: 15em;
+		> header{padding: 16px;color:#fff;display: flex;justify-content: space-between;}
 		> main{padding: 16px;}
 	}
 </style>
