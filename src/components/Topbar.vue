@@ -3,16 +3,30 @@
 		<div class="wrapper">
 			<span class="logo">Resumer</span>
 			<div class='actions'>
-				<button class='primary'>保存</button>
-				<button>预览</button>
+				<a class='button primary' href="#" @click.prevent='signUpDiaVisible = true'>注册</a>
+				<MyDialog title='注册' :visible='signUpDialogVisible' @close='signUpDialogVisible = false'>
+					我就是 slot 内容
+				</MyDialog>
+				<a class='button' href="#">登录</a>
+				<button class='button primary'>保存</button>
+				<button class='button'>预览</button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import MyDialog from './MyDialog'
 export default {
-	name: "Topbar"
+	name: "Topbar",
+	data(){
+		return {
+			signUpDialogVisible: false
+		}
+	},
+	components: {
+		MyDialog
+	}
 }
 </script>
 
@@ -38,7 +52,7 @@ export default {
 			color: #000;
 		}
 	}
-	button{
+	.button{
 		width: 72px;
 		height: 32px;
 		border: none;
@@ -46,6 +60,11 @@ export default {
 		font-size: 18px;
 		background: #ddd;
 		color: #222;
+		text-decoration: none;
+		display: inline-flex;
+		justify-content: center;
+		align-content: center;
+		vertical-align: middle;
 		&:hover{
 			box-shadow: 1px 1px 1px hsla(0,0,0,.5)
 		}
@@ -53,5 +72,8 @@ export default {
 			background-color: #02af5f;
 			color: white;
 		}
+	}
+	.actions > a{
+		line-height: 2
 	}
 </style>
