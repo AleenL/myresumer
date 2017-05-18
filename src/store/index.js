@@ -21,30 +21,25 @@ export default new Vuex.Store({
 				{field:'contacts',icon:'phone'},
 				],
 				profile:{
-					name:'李xx',
-					city:'重庆',
-					title:'前端工程师',
-					birthday:'1990-01-01'
+					name:'',
+					city:'',
+					title:'',
+					birthday:''
 				},
 				'workHistory':[
-				{company:'广达电脑制造公司',content:'我的第一个工作，没什么技术含量，就是给别人打下手'},
-				{company:'肯德基快餐店',content:'后厨帮忙，一般就是在厨房炸薯条啦，炸鸡腿了，做汉堡的肉啦'}
+				{company:'',content:''}
 				],
 				education: [
-				{school:'为难师范学院',content:'本科学历'},
-				{school:'TX',content:'我的大学'}
+				{school:'',content:''}
 				],
 				projects: [
-				{name:'AL',content:'我的大学'},
-				{name:'TX',content:'我的大学'}
+				{name:'',content:''}
 				],
 				awards: [
-				{name:'先进个人',content:'渭南师范学院先进个人'},
-				{name:'TX',content:'我的大学'}
+				{company:'',content:''}
 				],
 				contacts: [
-				{contact:'phone',content:'18512444432'},
-				{contact:'QQ',content:'998778665'}
+				{contact:'',content:''}
 				],
 			}
 		},
