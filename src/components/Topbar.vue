@@ -11,8 +11,6 @@
 					<a class='button primary' href="#" @click.prevent='signUpDialogVisible = true'>注册</a>
 					<a class='button' href="#" @click.prevent='signInDialogVisible = true'>登录</a>
 				</div>	
-				<button class='button primary'>保存</button>
-				<button class='button'>预览</button>
 			</div>
 		</div>
 		<MyDialog title='注册' :visible='signUpDialogVisible' @close='signUpDialogVisible = false'>
@@ -109,7 +107,6 @@ export default {
 	.actions{
 		display: flex;
 		.userActions{
-			margin-right: 3em;
 		}
 		.Hello{margin-right: .5em}
 		a{line-height: 2em;}
