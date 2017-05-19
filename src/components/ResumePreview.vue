@@ -11,7 +11,6 @@
         <small>{{resume.profile.birthday}}</small>
       </p>
     </section>
-
     <section data-name="projects" v-if="resume.projects && resume.projects.length > 0">
       <h2>项目经历</h2>
       <ol>
