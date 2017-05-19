@@ -17,7 +17,7 @@
       <ol>
         <li v-for="item in resume.projects">
           <h3>{{item.name}}</h3>
-          <p v-show="item.content"> {{item.content}} </p>
+          <p v-show="item.details"> {{item.details}} </p>
         </li>
       </ol>
     </section>
