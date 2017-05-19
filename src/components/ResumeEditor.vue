@@ -2,18 +2,18 @@
 	<div id="resumeEditor">
 		<nav>
 			<ol>
-				<li v-for="(item,index) in resume.config" :class="{active: item === selected}" @click="selected = item"><svg class='icon'>
+				<li v-for="(item,index) in resumeConfig" :class="{active: item.field === selected}" @click="selected = item.field"><svg class='icon'>
 					<use :xlink:href="`#icon-${item.icon}`"></use>
 				</svg></li>
 			</ol>
 		</nav>
 		<ol class="panels">
-			<li v-for='item in resume.config' v-show="item===selected">{{resume[item]}}
+			<li v-for="item in resumeConfig" v-show="item.field === selected">
 				<div v-if='item.type ==="array"'>
-					<h2>{{item.field}}</h2>
+					<h2>{{$t(`resume.${item.field}._`)}}</h2>
 					<div class='subitem' v-for='(subitem,i) in resume[item.field]'>
 						<div class='resumeField' v-for='(value,key) in subitem'>
-							<label>{{key}}</label>
+							<label> {{$t(`resume.${item.field}.${key}`)}} </label>
 							<input type="text" :value="value" @input="changeResumeField(`${item.field}.${i}.${key}`, $event.target.value)">
 						</div>
 						<hr>
@@ -21,7 +21,7 @@
 					<button @click='addResumeSubfield(item.field)'>新增</button>	
 				</div>
 				<div v-else class='resumeField' v-for="(value,key) in resume[item.field]">
-					<label>{{key}}</label>
+					<label> {{$t(`resume.profile.${key}`)}} </label>
 					<input type="text" :value="value" @input="changeResumeField(`${item.field}.${key}`, $event.target.value)">
 				</div>
 			</li>
@@ -43,6 +43,9 @@ export default{
 		},
 		resume (){
 			return this.$store.state.resume
+		},
+		resumeConfig(){
+			return this.$store.state.resumeConfig
 		}
 	},
 	methods: {
@@ -92,7 +95,7 @@ export default{
       }
     }
     svg.icon{
-      width: 24px; // 原设计稿 32px 不好看，改成 24px
+      width: 24px;
       height: 24px;
     }
   }
