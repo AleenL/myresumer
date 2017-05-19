@@ -65,35 +65,48 @@ export default new Vuex.Store({
 		},
 		setResumeId(state,{ id }){
 			state.resume.id = id
+		},
+		setResume(state, resume){
+			console.log('hi')
+			state.resumeConfig.map(({field})=>{
+				Vue.set(state.resume, field, resume[field])
+			})
+			state.resume.id = resume.id
 		}
 	},
 	actions:{
 		saveResume({ state, commit }, payload) {
 			var Resume = AV.Object.extend('Resume')
+			var resume = new Resume()
 			if (state.resume.id) {
-
-			}else{
-				var resume = new Resume()
-				resume.set('profile', state.resume.profile)
-				resume.set('workHistory', state.resume.workHistory)
-				resume.set('education', state.resume.education)
-				resume.set('projects', state.resume.projects)
-				resume.set('awards', state.resume.awards)
-				resume.set('contacts', state.resume.contacts)
-				resume.set('owner_id', getAVUser().id)
-
-				var acl = new AV.ACL()
-				acl.setPublicReadAccess(true)
-				acl.setWriteAccess(AV.User.current(),true)
-
-				resume.setACL(acl)
-				resume.save().then(function (response) {
-					commit('setResumeId', { id: response.id })
-				}).catch(function (error){
-					console.log(error)
-				})
+				resume.id = state.resume.id
 			}
+			resume.set('profile', state.resume.profile)
+			resume.set('workHistory', state.resume.workHistory)
+			resume.set('education', state.resume.education)
+			resume.set('projects', state.resume.projects)
+			resume.set('awards', state.resume.awards)
+			resume.set('contacts', state.resume.contacts)
+			resume.set('owner_id', getAVUser().id)
+
+			var acl = new AV.ACL()
+			acl.setPublicReadAccess(true)
+			acl.setWriteAccess(AV.User.current(),true)
+
+			resume.setACL(acl)
+			resume.save().then(function (response) {
+				commit('setResumeId', { id: response.id })
+			}).catch(function (error){
+				console.log(error)
+			})
 		},
+		fetchResume({commit},payload){
+			var query = new AV.Query('Resume');
+			query.equalTo('owner_id', getAVUser().id)
+			query.first().then((resume)=>{
+				commit('setResume', {id: resume.id, ...resume.attributes})
+			})
+		}
 	}
 })
 
