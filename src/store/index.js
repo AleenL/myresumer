@@ -68,7 +68,6 @@ export default new Vuex.Store({
 			state.resume.id = id
 		},
 		setResume(state, resume){
-			console.log('hi')
 			state.resumeConfig.map(({field})=>{
 				Vue.set(state.resume, field, resume[field])
 			})
