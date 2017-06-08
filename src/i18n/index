@@ -17,7 +17,10 @@ export default{
 				city:'城市',
 				title:'职位',
 				english:'职位英语',
-				birthday:'生日'
+				birthday:'生日',
+				money:'期望薪资',
+				workhistory:'工作经验',
+				wantcity:'求职城市'
 			},
 			workHistory:{
 				_:'工作经历',
@@ -27,22 +30,23 @@ export default{
 			education:{
 				_:'教育经历',
 				school:'毕业院校',
-				details:'详情'
+				details:'学历'
 			},
 			projects:{
 				_:'项目经历',
 				name:'项目名称',
-				details:'项目介绍'
+				details:'项目介绍',
+				link:'项目链接'
 			},
 			awards:{
-				_:'获奖经历',
-				name:'奖项名称',
-				details:'详情'
+				_:'掌握技能',
+				name:'技能名称',
+				details:'熟练度(精通、熟悉、一般、了解)'
 			},
 			contacts:{
 				_:'联系方式',
 				contact:'途径',
-				content:'内容'
+				details:'内容'
 			}
 		}
 	}

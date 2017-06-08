@@ -14,15 +14,18 @@ export default new Vuex.Store({
 			username:''
 		},
 		resumeConfig:[
-				{ field: 'profile', icon: 'id', keys: ['name', 'city', 'title', 'birthday']},
+				{ field: 'profile', icon: 'id', keys: ['name', 'city', 'title','english','money','workhistory','wantcity','birthday']},
         		{ field: 'workHistory', icon: 'work', type: 'array', keys: ['company', 'details'] },
         		{ field: 'education', icon: 'book', type: 'array',  keys: ['school', 'details'] },
-        		{ field: 'projects', icon: 'heart', type: 'array',  keys: ['name', 'details']  },
+        		{ field: 'projects', icon: 'heart', type: 'array',  keys: ['name', 'link','details']  },
         		{ field: 'awards', icon: 'cup', type: 'array',  keys: ['name', 'details'] },
-        		{ field: 'contacts', icon: 'phone', type: 'array',  keys: ['contact', 'content'] },
+        		{ field: 'contacts', icon: 'phone', type: 'array',  keys: ['contact', 'details'] },
 			],
 		resume:{
 			id:''
+		},
+		number:{
+			data:''
 		}
 	},
 	mutations: {

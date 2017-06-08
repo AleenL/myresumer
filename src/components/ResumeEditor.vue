@@ -77,6 +77,7 @@ export default{
       width: 80px;
       background: black;
       color: white;
+      height:120vh;
       > ol {
         > li{
           height: 48px;
